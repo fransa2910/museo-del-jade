@@ -1,0 +1,76 @@
+<ion-view  class="bg-color-black ">
+  
+  <ion-nav-bar class="bar-dark bg-color-black " >
+    <ion-nav-title>
+        <span class="font-color-cream">MUSEO DEL JADE</span>
+     </ion-nav-title>
+    <ion-nav-buttons side="left">
+       
+       <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+    
+   
+
+  <ion-content class="background-exhibitions" ng-controller="ExhiBgCtrl"  >
+    <div class="list">
+      <div class="item item-divider firstMenu"> 
+        <h2 class="firstMenuText">Exhibiciones</h2>
+          <h2 class="firstMenuText">Permanentes</h2>
+      </div>
+      
+      <!--******-->
+      <div class="row row-size bg-slide-black full-images-exhi"  ng-repeat="dir in exhiBg"  ng-style="{'background-image': dir.picture,'background-repeat' :'no-repeat'}"><!--,  'background-size':'100% auto'-->
+        <div class="position-exhi">
+          <h1 class="font-color-white ">{{dir.name}}</h1>
+          <p class="font-color-white " >{{dir.miniDescription}}</p>
+         
+        </div>       
+
+        <a class="button jade-button button-position" href="#/app/exhibiciones/1">
+          VISITAR
+        </a> 
+
+      </div>
+      
+      
+      <!--<ion-slide>
+        <a class="bg-slide-black item exhibitionsMenu full-side" href="#/app/exhibiciones/1" >
+          <h1 class="font-color-white">El Jade</h1>
+           <p class="font-color-white">Proceso de elaboracion del jade, rutas de comercio</p>
+        </a>
+      </ion-slide>
+      <ion-slide class="full-side">
+        <a class="item exhibitionsMenu2 bg-slide-black full-side" href="#/app/exhibiciones/1">
+          <h1 class="font-color-white">Umbral</h1>
+          <p class="font-color-white">Escenario cultural y ecologico donde se desarrollaron las sociedades</p>
+        </a>
+      </ion-slide>-->
+
+      
+    
+    </div>
+  </ion-content>
+</ion-view>
+
+
+
+<!--
+
+
+  <ion-slide>
+        <a class="bg-slide-black item exhibitionsMenu full-side" href="#/app/exhibiciones/1" >
+          <h1 class="font-color-white">El Jade</h1>
+          <p class="font-color-white">Proceso de elaboracion del jade, rutas de comercio</p>
+        </a>
+      </ion-slide>
+      <ion-slide class="full-side">
+        <a class="item exhibitionsMenu2 bg-slide-black" href="#/app/exhibiciones/1">
+          <h1 class="font-color-white">Umbral</h1>
+          <p class="font-color-white">Escenario cultural y ecologico donde se desarrollaron las sociedades</p>
+        </a>
+      </ion-slide>
+
+
+
+-->

@@ -1,0 +1,307 @@
+/* Empty. Add your own CSS if you like */
+
+
+html,body{
+  margin:0;
+  padding: 0;
+}
+
+/*exhibiciones*/
+
+/* Empty. Add your own CSS if you like */
+.bar.leftBarCustom{
+    border-color: #b2b2b2;
+    background-color: #00a69c;
+    background-image: url("/img/leftBar.jpg") no-repeat center center fixed;
+    color: #444; 
+}
+
+.leftBarItem{
+    border-color: #b2b2b2;
+    background-color: #404041;
+    color: #00a69c; 
+}
+
+.exhibitionsMenu{
+        
+    padding: 100px;
+    background-image: url("http://i0.wp.com/cambiopolitico.com/wp-content/uploads/2014/06/esferas07.jpg");
+    background-repeat: no-repeat;
+    
+    background-position: center;
+  
+  
+    margin: auto;
+    z-index: 2;
+   
+    color: white;
+    
+}
+.exhibitionsMenu2{
+        
+    padding: 100px;
+    background-image: url("http://www.goeasycostarica.com/wp-content/uploads/2013/12/museo-del-jade-costa-rica-go-easy.jpg");
+    background-repeat: no-repeat;
+    
+    background-position: center;
+  
+  
+    margin: auto;
+    z-index: 2;
+   
+    color: white;
+    
+}
+
+
+
+.background-exhibitions{
+  background-color:#000;
+}
+
+.row-size{
+  height: 300px;
+  padding: 0px;
+  top=0;
+  margin-top: 0!important;
+  width: 100%;
+  position: relative;
+}
+.send2back{
+  position: absolute;
+  z-index: 0;
+}
+
+
+
+
+.button-position{
+  /*width: 50%;
+  margin: 0 auto;*/
+  float:left;
+  clear:left;
+  position:absolute;
+  margin-top: 250px;
+  left: 35%;
+}
+
+.firstMenu{
+    background-color: #404041;
+    color: #00a69c; 
+    text-align: center;
+    font-size: small;
+}
+
+.titlee{
+    color: white;
+}
+.firstMenuText{
+    color: #00a69c; 
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.jade-button{
+  background: transparent !important;
+  border: 2px solid #f1f1f2;
+  border-radius: 20px;
+  padding: 0px 15px 0px 15px;
+  min-height: 15px;
+  line-height: 20px!important;
+  height: 25px;
+  color: #f1f1f2;
+}
+
+
+
+.bg-slide-black{
+  /*box-shadow: inset 0px 0px 0px 1px #404041;*/
+  /*background-color: #404041;*/
+  border: none;
+  
+}
+
+
+.p-position{
+  margin-top: 150px;
+  left: 20%;
+  position: relative;
+}
+
+.h1-position {
+  position: relative;
+  margin-top: 90px!important;
+  left: 30%;
+}
+
+/*menu && exhibicion*/
+.bg-img{
+  background:url("../blur.png") no-repeat;
+    
+}
+
+.margin-top{
+  padding-top: 50px;
+}
+
+.slider-pager-page {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.slider-pager-page.active {
+  color: #19A89C !important;
+  opacity: 1 !important;
+  border-bottom: 0px !important;
+}
+
+
+.off-margin{
+  margin: 0;
+}
+
+.full-images{
+  width: 100%;
+  height: 200px;
+
+}
+
+.full-images-exhi{
+  width: 100%;
+  height: 300px;
+
+}
+
+.gradient-effect{
+    background: linear-gradient( #404041,#252525 15%  );
+}
+
+.bg-head{
+  background:url("../topSideBar.png") no-repeat;
+}
+
+.increment-padding{
+  padding:100px;
+}
+ 
+.bg-color-black{
+  background-color: #404041 !important;
+}
+
+.font-color-cream{
+  color:#F5D485 !important;
+  
+}
+
+.tab-custom{
+  padding-top: 0px !important;
+  /*border-bottom: 2px solid #626262  !important;*/
+  display: inline-block;
+}
+
+.tab-item.active, .tab-item.activated{
+  margin-top:0px !important;
+  border-bottom: 2px solid #19A89C  !important;
+  border-width: 0 0 2px 0 !important;
+ 
+}
+ 
+.font-color-white{
+  color:#f1f1f2 !important;
+}
+
+.font-color-green{
+  color: #19A89C !important;
+}
+
+.align-center{
+  position: relative;
+  text-align: center;
+}
+
+.bg-image{
+  width: 100% !important;
+  background: url("../exhibicion1%20jade.png") no-repeat !important;
+}
+ 
+ion-item.item a {
+  background-color: #404041;
+  box-shadow: inset 0px 0px 0px 1px #404041;
+  background-image: linear-gradient(0deg, #404041, #404041 100%, transparent 100%);
+  color:white;
+  font-family: 'San Francisco Text', "Helvetica-Neue", Helvetica, sans-serif;
+}
+
+ 
+ion-item.itemMenu { 
+  background: transparent;
+  border-top:0 !important;
+  border-left: 0 !important;
+  margin-left: 90px;
+}
+
+ion-item.itemMenu:hover{
+  background:transparent;
+}
+
+ion-item.itemMenu a {
+  background:transparent !important;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+  filter:alpha(opacity=40);
+  color:#F1F1F2;  
+  font-family: 'San Francisco Text', "Helvetica-Neue", Helvetica, sans-serif;
+}
+
+
+.tabs-dark > .tabs  {
+  background-color: #404041 !important ;
+  position: relative;
+  border: 0px;
+}
+ion-item.itemMenu:hover a {
+  background:transparent;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+  filter:alpha(opacity=40);
+  color:#19A89C;
+  font-family: 'San Francisco Text', "Helvetica-Neue", Helvetica, sans-serif;
+	
+
+}
+
+.move-to-right{
+  float: right;
+ 
+}
+.title-mod {
+  color:#F5D485;
+  text-align: center;
+  font-size: 12pt;
+}
+
+
+
+img{
+  height: 50px;
+  width: 100%;
+}
+
+
+.position-exhi {
+  position: absolute;
+  margin-top: 90px!important;
+  left: 15%;
+  float:left;
+  height: 100px;
+
+}
+
+.text-align-center{
+  text-align: center;
+}
+.tabs-nav.tabs {
+  background-color:#404041 !important;
+  border-color: #404041 !important;
+  background-image: linear-gradient(0deg, #404041, #404041 50%, transparent 50%)!important;
+}
+
+
