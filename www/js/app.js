@@ -24,9 +24,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   }); 
 
- 
+  
 })
-
+ 
 
 
 .controller('showMenuCtrl', function($scope, $ionicSideMenuDelegate,$element) {  
@@ -57,40 +57,50 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
+/*  .state('app.search', {
     url: '/search',
     views: {
       'menuContent': {
         templateUrl: 'templates/search.html'
-      }
+      } 
     }
-  }) 
+  })  
 
   .state('app.browse', {
       url: '/browse',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/browse.html' 
         }
       }
-    })
+    })*/
     .state('app.exhibiciones', { 
       url: '/exhibiciones',
       views: {
         'menuContent': {
           templateUrl: 'templates/exhibiciones.html',  
-          controller: 'ExhibicionesCtrl'
+          controller: 'ExhibicionesCtrl' 
+        },
+        'header':{
+          templateUrl : 'templates/headerExhibitions.html'
+          
         } 
       }
-    })
+    })  
 
-  .state('app.single', {
+  .state('app.exhibicion', {
     url: '/exhibiciones/:exhibicionID',
     views: {
       'menuContent': {
         templateUrl: 'templates/exhibicion.html',
-        controller: 'ExhibicionCtrl',
+        controller: 'ExhibicionCtrl'
         
+      },
+      'header':{
+        templateUrl : 'templates/headerExhibition.html'
+      },
+      'footer':{
+        templateUrl : 'templates/footerExhibition.html'
       }
     }
  

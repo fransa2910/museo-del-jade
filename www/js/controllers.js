@@ -58,7 +58,7 @@ angular.module('starter.controllers', [])
     
 
  
-}) 
+})  
 
 
 .controller('frost', function($scope, $rootScope, $compile) {
@@ -84,7 +84,7 @@ angular.module('starter.controllers', [])
 })
   
 
-.controller('ExhibicionCtrl', function($scope, $stateParams) {
+.controller('ExhibicionCtrl', function($scope, $stateParams,$http) {
   
   /*app/exhibiciones/1/tabAudioguia
   app/exhibiciones/1/tabPiezas*/
@@ -103,14 +103,18 @@ angular.module('starter.controllers', [])
     return newArr;
   }
 
-$scope.chunkedData = chunk($scope.piezas, 3);
+  $scope.chunkedData = chunk($scope.piezas, 3);
+  
+  $scope.params = $stateParams;
+  $http.get("https://stormy-thicket-8940.herokuapp.com/exhibitions/"+$scope.params.exhibicionID+"/exhibition_images.json")    
+    .then(function(response) {$scope.exhib = response.data;console.log($scope.exhib[0].file.file.url); $scope.index="https://stormy-thicket-8940.herokuapp.com" }); 
 
-})
-
-
+}) 
+ 
+  
 .controller('ExhiBgCtrl',function($scope,$http){
-  /*$http.get("https://stormy-thicket-8940.herokuapp.com/exhibitions.json")
-    .then(function(response) {$scope.exhiBg = response.data.records;});*/
+  $http.get("https://stormy-thicket-8940.herokuapp.com/exhibitions.json")   
+    .then(function(response) {$scope.exhiBg = response.data ;}); 
 /*  function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   if ("withCredentials" in xhr) {
@@ -141,10 +145,10 @@ if (!xhr) {
 }
   var url = 'https://stormy-thicket-8940.herokuapp.com/exhibitions.json';
   var xhr = createCORSRequest('GET', url);
-  xhr.send();
+  xhr.send(); 
   $scope.exhiBg = xhr; */
-    $scope.exhiBg = [{"id":1,"name":"El Jade","description":"El jade elaborado en COsta rica era tallado en el area central, especialmente en las planicies del caribe central, pero tambien en la subregion guanacaste nicoya","miniDescription":"Proceso de elaboracion del jade, rutas de comercio, simblismo y uso social","item_id":null,"url":"https://stormy-thicket-8940.herokuapp.com/exhibitions/1.json","picture":'url(http://i0.wp.com/cambiopolitico.com/wp-content/uploads/2014/06/esferas07.jpg)'},{"id":2,"name":"Umbral","description":"--","miniDescription":"Escenario cultural y ecologico donde se desarrollaron las sociedades","item_id":null,"url":"https://stormy-thicket-8940.herokuapp.com/exhibitions/2.json","picture":'url(http://i0.wp.com/cambiopolitico.com/wp-content/uploads/2014/06/esferas07.jpg)'}]
-  
+/*    $scope.exhiBg = [{"id":1,"name":"El Jade","description":"El jade elaborado en COsta rica era tallado en el area central, especialmente en las planicies del caribe central, pero tambien en la subregion guanacaste nicoya","miniDescription":"Proceso de elaboracion del jade, rutas de comercio, simblismo y uso social","item_id":null,"url":"https://stormy-thicket-8940.herokuapp.com/exhibitions/1.json","picture":'url(http://i0.wp.com/cambiopolitico.com/wp-content/uploads/2014/06/esferas07.jpg)'},{"id":2,"name":"Umbral","description":"--","miniDescription":"Escenario cultural y ecologico donde se desarrollaron las sociedades","item_id":null,"url":"https://stormy-thicket-8940.herokuapp.com/exhibitions/2.json","picture":'url(http://i0.wp.com/cambiopolitico.com/wp-content/uploads/2014/06/esferas07.jpg)'}]*/
+   
   /*$scope.exhiBg = [ 
     { address: 'url(http://i0.wp.com/cambiopolitico.com/wp-content/uploads/2014/06/esferas07.jpg)',p:"Escenario cultural y ecologico donde se desarrollaron las sociedades",h1:"Umbral1", id: 1 },
     { address: 'url(http://i0.wp.com/cambiopolitico.com/wp-content/uploads/2014/06/esferas07.jpg)',p:"Escenario cultural y ecologico donde",h1:"Umbral2", id: 2 },

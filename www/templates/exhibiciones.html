@@ -1,20 +1,19 @@
 <ion-view  class="bg-color-black ">
   
-  <ion-nav-bar class="bar-dark bg-color-black " >
+  <!--<ion-nav-bar class="bar-dark bg-color-black " >
     <ion-nav-title>
-        <span class="font-color-cream">MUSEO DEL JADE</span>
-     </ion-nav-title>
+        <span class="font-color-cream">MUSEO DEL JADE</span> 
+     </ion-nav-title> 
     <ion-nav-buttons side="left">
        
        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   </ion-nav-bar>
-    
-   
+       -->
 
-  <ion-content class="background-exhibitions" ng-controller="ExhiBgCtrl"  >
+  <ion-content class="background-exhibitions" ng-controller="ExhiBgCtrl"   >
     <div class="list">
-      <div class="item item-divider firstMenu"> 
+      <div class="item item-divider firstMenu">   
         <h2 class="firstMenuText">Exhibiciones</h2>
           <h2 class="firstMenuText">Permanentes</h2>
       </div>
@@ -27,11 +26,11 @@
          
         </div>       
 
-        <a class="button jade-button button-position" href="#/app/exhibiciones/1">
+        <a class="button jade-button button-position" value="{{dir.url}}" href="#/app/exhibiciones/{{dir.id}}">
           VISITAR
         </a> 
 
-      </div>
+      </div> 
       
       
       <!--<ion-slide>
@@ -54,7 +53,7 @@
 </ion-view>
 
 
-
+ 
 <!--
 
 
@@ -73,4 +72,4 @@
 
 
 
--->
+--> 

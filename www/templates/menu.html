@@ -6,19 +6,30 @@
 
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
+        </button> 
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
+    
+
+
+        <div ui-view  ="header"></div> 
+       
+     
+        <ion-nav-view name="menuContent"></ion-nav-view>
+
+
+        <div ui-view  ="footer"></div>  
+
+    
   </ion-side-menu-content>
 
   <ion-side-menu side="left" class="bg-img">
-    <ion-header-bar class="bg-head" >
+    <ion-header-bar class="bg-head" > 
     </ion-header-bar> 
     
     <ion-content >
       
-      <ion-list class="move-to-right" >
+      <ion-list class="move-to-right" > 
         
         
         <ion-item ng-repeat="menu in menus" class="itemMenu" href="#/app/{{menu.id}}" >
@@ -30,4 +41,4 @@
   </ion-side-menu>
 
 </ion-side-menus> 
- 
+   

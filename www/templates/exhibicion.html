@@ -1,15 +1,20 @@
-<ion-view class="bg-color-black" >
-  <ion-nav-bar class="bar-dark">
+<ion-view class="bg-color-black">
+<!--  <ion-nav-bar class="bar-dark">
     <ion-nav-title>
         <span class="font-color-cream">MUSEO DEL JADE</span>
      </ion-nav-title>
     <ion-nav-back-button></ion-nav-back-button>
-  </ion-nav-bar> 
-  
-  <ion-content class="bg-color-black" scroll="true" >
-    <ion-slide-box on-slide-changed="slideHasChanged($index)" class="bg-color-black full-image">
+  </ion-nav-bar>     
+ --> 
+  <ion-content class="bg-color-black" scroll="true"  >
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" class="bg-color-black full-image" >
 
-          <ion-slide>
+      
+      <ion-slide ng-repeat="exhibition in exhib">
+         <img class="full-images "  ng-src="https://stormy-thicket-8940.herokuapp.com{{exhibition.file.file.url}}"> 
+ 
+      </ion-slide> 
+         <!-- <ion-slide>
             <img class="full-images " src="http://behance.vo.llnwd.net/profiles13/1314419/projects/4442281/296f84b2add385516be5e32edc54d494.JPG">
           </ion-slide>
           <ion-slide>
@@ -17,10 +22,12 @@
           </ion-slide>
           <ion-slide>
            <img class="full-images" src="http://behance.vo.llnwd.net/profiles13/1314419/projects/4442281/296f84b2add385516be5e32edc54d494.JPG">
-          </ion-slide>
-
-        </ion-slide-box>
-    <div class="list card off-margin">
+          </ion-slide> -->
+   
+        </ion-slide-box> 
+    
+       
+    <div class="list card off-margin"> 
       
       <div class="item item-body bg-color-black gradient-effect "> 
  
@@ -66,7 +73,6 @@
       
   </div>--> 
   </ion-content>
-  
+
    
-    
 </ion-view>
