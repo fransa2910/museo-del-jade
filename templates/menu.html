@@ -1,0 +1,77 @@
+<!--ES-->
+<ion-side-menus enable-menu-with-back-views="false">
+	<ion-side-menu-content>
+		<ion-nav-bar class="bar-stable">
+			<ion-nav-back-button class="button-clear">
+				<i class="icon ion-chevron-left"></i>
+			</ion-nav-back-button>
+
+			<ion-nav-buttons side="left">
+				<button class="button button-icon button-clear ion-navicon" menu-toggle="left"> </button>
+
+
+			</ion-nav-buttons>
+			<ion-nav-buttons side="right">
+				<button side="right" class="button font-color-white bg-color-black borderless" ng-class="showLang" ng-click="popover.show($event);hide(); " menu-toggle="right"> {{langClass|uppercase}}
+				</button>
+			</ion-nav-buttons>
+
+		</ion-nav-bar>
+
+
+
+		<div ui-view="header"></div>
+		<ion-nav-view name="menuContent"></ion-nav-view>
+
+
+
+
+
+		
+	</ion-side-menu-content>
+<!--ES-->
+	<ion-side-menu side="left" class="bg-img" lang="es">
+		<ion-header-bar class="bg-head"> 
+		</ion-header-bar>
+
+
+
+		<ion-content>
+
+			<ion-list class="move-to-right">
+
+
+				<ion-item ng-repeat="menu in menusES" class="itemMenu">
+
+					<a menu-close class="anchor-decoration-none" href="{{menu.url}}">{{menu.title}}</a>
+				</ion-item>
+			</ion-list>
+		</ion-content>
+	</ion-side-menu>
+
+	<!--EN-->
+	<ion-side-menu side="left" class="bg-img" lang="en">
+		<ion-header-bar class="bg-head">
+		</ion-header-bar>
+
+		<ion-content>
+
+			<ion-list class="move-to-right">
+
+
+				<ion-item ng-repeat="menu in menusEN" class="itemMenu">
+
+					<a menu-close class="anchor-decoration-none" href="{{menu.url}}">{{menu.title}}</a>
+				</ion-item>
+		</ion-content>
+	</ion-side-menu>
+
+</ion-side-menus>
+
+ 
+
+
+ 
+
+
+<!--EN-->

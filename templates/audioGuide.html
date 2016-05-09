@@ -1,0 +1,67 @@
+<ion-view class="bg-color-black">
+
+    <div class="bg-color-black gradient-effect bar" lang="es">
+        <a ng-click="closeModal()" class="slide-down-arrow title slide-down-arrow font-color-white subheader-line-height icon ion-ios-arrow-down font-color-white"></a>
+    </div>
+    <ion-content class="bg-color-black" style='margin-top: 11%;' scroll="true">
+        <!--    <ion-slide-box on-slide-changed="slideHasChanged($index)" class="bg-color-black full-image">
+
+
+
+   
+      <ion-slide ng-repeat="exhibition in exhib ">
+        <img class="full-images " ng-src="{{exhibition.file.file.url}}">
+      </ion-slide>
+
+
+    </ion-slide-box> 
+    -->
+
+        <div class="audio-wrapper"> 
+            <img style="height:250px;" ng-src="{{currAudio.file.file.url}}">
+            <a class="ion-social-youtube audio-play-position-big-size hidden-button"></a>
+			<a class="ion-ios-pause audio-play-position-big-size visible-button"></a> 
+        </div>
+
+
+
+        <div class="list card off-margin">
+
+            <div class="borderless item item-body bg-color-black gradient-effect ">
+                <div class="row">
+                    <div class="col-33 text-align-center">
+
+                        <a ng-click="insertAudioguides({{'currAudio'}}, {{'specificExhi.id'}}, {{'currAudio.id'}})" ng-class="isFav" class="icon-size-medium font-color-white"></a>
+
+                    </div> 
+                    <div class="col-33">
+                        <h1 class="font-color-green align-center font-size-big">{{currAudio.name}}</h1>
+
+                    </div>
+                    <div class="col-33 text-align-center"> 
+                        <a class="ion-ios-upload-outline icon-size-medium font-color-white" ng-click="pieceAudioShare({{'currAudio'}})"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20"></div>
+                    <div class="col-60 text-align-center">
+                        <p><small>{{currAudio.description}}</small>
+                        </p>
+                    </div>
+                    <div class="col-20"></div>
+                </div>  
+                <!--<div class="item range range-balanced bg-color-transparent bg-slide-black">
+                    <i class="icon ion-volume-high "></i>
+                    <input type="range" min="{{user.min}}" max="{{user.max}}" step="1" ng-model="user.value" value="{{user.value}}" ng-click ="setVolume(user.value)">
+                </div>-->
+                <p class="font-color-white">
+                    {{currAudio.text}}
+                </p>
+  
+            </div>
+ 
+
+        </div>
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,252 @@
+<!--ES-->
+
+<ion-view class="bg-color-black ">
+
+	<!--ES-->
+	<div class="bar bar-subheader bg-color-black subheader-height" lang="es">
+		<h1 class="title font-color-green subheader-line-height">COMPRA DE TIQUETES</h1>
+	</div>
+	<!--EN-->
+	<div class="bar bar-subheader bg-color-black subheader-height" lang="en">
+		<h1 class="title font-color-green subheader-line-height">TICKETS SELLING</h1>
+	</div>
+
+	<ion-content class="background-exhibitions has-subheader">
+		<div class="row">
+			<div ng-class="onOff">
+
+
+				<input class="display-inline " type="date" id="exampleInput" name="input" ng-model="fecha" placeholder="yyyy-MM-dd" required />
+				<button class="button jade-button" ng-click="listo()">Listo!</button>
+			</div>
+
+			<p ng-class="onOffp" class="font-color-white text-bold font-color-green"> &nbsp &nbsp {{fecha |date: "EEEE MMMM d, yyyy"}}</p>
+		</div>
+
+		<!--ES-->
+		<div class="row" lang="es">
+			<a class="font-color-white text-sm text-bold" ng-click="changeDate()">&nbsp &nbsp ESCOGER OTRO DIA</a>
+		</div>
+
+		<!--EN-->
+		<div class="row" lang="en">
+			<a class="font-color-white text-sm text-bold" ng-click="changeDate()">&nbsp &nbsp CHOOSE ANOTHER DAY</a>
+		</div>
+		<!--ES-->
+		<div class="row border-green-solid" lang="es">
+			<h5 class="font-color-white row-custom-ticket line-height-shrink"> &nbsp &nbsp Admisión General</h5>
+
+
+		</div>
+		<!--EN-->
+		<div class="row border-green-solid" lang="en">
+			<h5 class="font-color-white row-custom-ticket line-height-shrink"> &nbsp &nbsp General admision</h5>
+
+
+		</div>
+
+		<div class="row">
+
+			<h4 class="line-height-shrink text-bold font-color-white row-custom-ticket"> &nbsp &nbsp{{fecha | date:"EEEE MMMM d, yyyy"}}</h4>
+
+
+		</div>
+		<div class="row" lang="es">
+
+
+			<p class="line-height-shrink font-color-white text-small-schedule row-custom-ticket">&nbspc&nbsp Horario del Museo 10 am - 4pm</p>
+
+		</div>
+		<div class="row" lang="en">
+
+
+			<p class="line-height-shrink font-color-white text-small-schedule row-custom-ticket">&nbspc&nbsp Schedule 10 am - 4pm</p>
+
+		</div>
+		<!--EN-->
+		<div class="row" lang="es">
+			<h6 class="font-color-white">&nbsp &nbsp Cantidad</h6>
+		</div>
+		<!--ES-->
+		<div class="row" lang="en">
+			<h6 class="font-color-white">&nbsp &nbsp Quantity</h6>
+		</div>
+		<div lang="es">
+			<div class="row">
+				<div class="col col-50 font-color-white"> 
+					<p>Adulto</p>
+				</div>
+				<div class="col font-color-white">
+					<p>$2000</p>
+				</div>
+				<div class="col font-color-white">
+					<div style="height:35px; width:100%; border: 2px solid #19A89C;">
+
+
+
+						<input class="bg-transparent" ng-model="N1" type="number" />
+
+						<button class="ion-chevron-left font-color-white ticket-btn-inc-dec" ng-click="decreaseN1()"></button>
+						<button style="display:inline-block;" class="ion-chevron-right ticket-btn-inc-dec font-color-white" ng-click="increaseN1()"></button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-50 font-color-white">
+					<p>Niño</p>
+				</div>
+				<div class="col font-color-white">
+					<p>$1000</p>
+				</div>
+				<div class="col font-color-white">
+					<div style="height:35px; width:100%; border: 2px solid #19A89C;">
+
+
+
+						<input class="bg-transparent" ng-model="N2" type="number" />
+
+						<button class="ion-chevron-left font-color-white ticket-btn-inc-dec" ng-click="decreaseN2()"></button>
+						<button style="display:inline-block;" class="ion-chevron-right ticket-btn-inc-dec font-color-white" ng-click="increaseN2()"></button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-50 font-color-white">
+					<p>Estudiante</p>
+				</div>
+				<div class="col font-color-white">
+					<p>$1000</p>
+				</div>
+				<div class="col font-color-white">
+					<div style="height:35px; width:100%; border: 2px solid #19A89C;">
+
+
+
+						<input class="bg-transparent" ng-model="N3" type="number" />
+
+						<button class="ion-chevron-left font-color-white ticket-btn-inc-dec" ng-click="decreaseN3()"></button>
+						<button style="display:inline-block;" class="ion-chevron-right ticket-btn-inc-dec font-color-white" ng-click="increaseN3()"></button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-50 font-color-white">
+					<p>Adulto mayor</p>
+				</div>
+				<div class="col font-color-white">
+					<p>$1000</p>
+				</div>
+				<div class="col font-color-white">
+					<div style="height:35px; width:100%; border: 2px solid #19A89C;">
+
+
+
+						<input class="bg-transparent" ng-model="N4" type="number" />
+
+						<button class="ion-chevron-left font-color-white ticket-btn-inc-dec" ng-click="decreaseN4()"></button>
+						<button style="display:inline-block;" class="ion-chevron-right ticket-btn-inc-dec font-color-white" ng-click="increaseN4()"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--EN-->
+		<div lang="en">
+			<div class="row">
+				<div class="col col-50 font-color-white">
+					<p>Adults</p>
+				</div>
+				<div class="col font-color-white">
+					<p>$2000</p>
+				</div>
+				<div class="col font-color-white">
+					<div style="height:35px; width:100%; border: 2px solid #19A89C;">
+
+
+
+						<input class="bg-transparent" ng-model="N1" type="number" />
+
+						<button class="ion-chevron-left font-color-white ticket-btn-inc-dec" ng-click="decreaseN1()"></button>
+						<button style="display:inline-block;" class="ion-chevron-right ticket-btn-inc-dec font-color-white" ng-click="increaseN1()"></button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-50 font-color-white">
+					<p>Kids</p>
+				</div>
+				<div class="col font-color-white">
+					<p>$1000</p>
+				</div>
+				<div class="col font-color-white">
+					<div style="height:35px; width:100%; border: 2px solid #19A89C;">
+
+
+
+						<input class="bg-transparent" ng-model="N2" type="number" />
+
+						<button class="ion-chevron-left font-color-white ticket-btn-inc-dec" ng-click="decreaseN2()"></button>
+						<button style="display:inline-block;" class="ion-chevron-right ticket-btn-inc-dec font-color-white" ng-click="increaseN2()"></button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-50 font-color-white">
+					<p>Students</p>
+				</div>
+				<div class="col font-color-white">
+					<p>$1000</p>
+				</div>
+				<div class="col font-color-white">
+					<div style="height:35px; width:100%; border: 2px solid #19A89C;">
+
+
+
+						<input class="bg-transparent" ng-model="N3" type="number" />
+
+						<button class="ion-chevron-left font-color-white ticket-btn-inc-dec" ng-click="decreaseN3()"></button>
+						<button style="display:inline-block;" class="ion-chevron-right ticket-btn-inc-dec font-color-white" ng-click="increaseN3()"></button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-50 font-color-white">
+					<p>Elders</p> 
+				</div>
+				<div class="col font-color-white">
+					<p>$1000</p>
+				</div>
+				<div class="col font-color-white">
+					<div style="height:35px; width:100%; border: 2px solid #19A89C;">
+
+
+
+						<input class="bg-transparent" ng-model="N4" type="number" />
+
+						<button class="ion-chevron-left font-color-white ticket-btn-inc-dec" ng-click="decreaseN4()"></button>
+						<button style="display:inline-block;" class="ion-chevron-right ticket-btn-inc-dec font-color-white" ng-click="increaseN4()"></button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<!--ES-->
+		<div class="row" lang="es">
+			<div class="col"></div>
+			<div class="col"><a class="button ticket-button" href="#/app/ticketCode" ng-click="postTicket()">Siguiente</a></div>
+			<div class="col"></div>
+
+ 
+		</div>
+		<!--EN-->
+		<div class="row" lang="en">
+			<div class="col"></div> 
+			<div class="col"><a class="button ticket-button" href="#/app/ticketCode" ng-click="postTicket()">Next</a></div>
+			<div class="col"></div>
+
+
+		</div>
+
+
+	</ion-content>
+</ion-view>

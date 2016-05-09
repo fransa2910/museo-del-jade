@@ -1,0 +1,19 @@
+<ion-view view-title="Museo del Jade" >
+  <ion-nav-bar>
+    <ion-nav-buttons side="left">
+       <!-- Toggle left side menu -->
+       <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content> 
+    <ion-list>
+      <ion-item class="item" >
+        <a>Exhibiciones</a>
+      </ion-item>
+      <ion-item ng-repeat="exhibicion in exhibiciones" class="item" href="#/app/exhibiciones/{{exhibicion.id}}">
+        {{exhibicion.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+

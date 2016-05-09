@@ -1,0 +1,143 @@
+<!--ES-->
+<!--
+<ion-view lang="es">
+	<div class="bar bar-subheader bg-color-black">
+		<h1 class="title font-color-green">MIS FAVORITOS</h1>
+	</div>
+	<ion-content class="has-subheader bg-color-black">
+		 
+
+		<ion-list ng-init="changeModeShow = 'hide'">
+			<div ng-repeat="group in groups">
+				<ion-item class="item-stable font-color-white bg-color-black" ng-click="toggleGroup(group);{{group.function}};" ng-class="{active: isGroupShown(group)}">
+
+					{{group.name}}
+					<i class="icon float-2-right font-color-white " ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'"></i> &nbsp;
+				</ion-item> 
+
+				<div class="row" ng-repeat="rows in group.items" ng-show="isGroupShown(group)">
+					<div ng-class="col" class="responsive-height piece-margin" ng-repeat="item in rows">
+						<a href="{{isAudio(group) ? '#/app/' : '#/app/exhibiciones/' + item.url.exhibitionID}}" ng-click="sendObject(item.url);changeModeShowFunc();">
+							<img class="piece-width" src="{{item.url.url}}" />
+							
+							<div id="favContent"> 
+							
+							</div>
+						</a>
+					</div> 
+				</div>
+			</div>
+		</ion-list> 
+	</ion-content>
+
+</ion-view>   
+-->
+
+
+<ion-view lang="es" class="bg-color-black" > 
+	<div class="bar bar-subheader bg-color-black">
+		<h1 class="title font-color-green">MIS FAVORITOS</h1>
+	</div>
+	<ion-content class="has-subheader bg-color-black">
+
+
+		<ion-list ng-init="changeModeShow = 'hide'">
+
+			<ion-item class="item-stable font-color-white bg-color-black" ng-click="toggleGroup(groups[0]);selectAudioguides() " ng-class="{active: isGroupShown(groups[0])}">
+
+				{{groups[0].name}}
+				<i class="icon float-2-right font-color-white " ng-class="isGroupShown(groups[0]) ? 'ion-chevron-up' : 'ion-chevron-down'"></i> &nbsp;
+			</ion-item>
+
+			<div class="row" ng-repeat="rows in groups[0].items" ng-show="isGroupShown(groups[0])">
+
+				<div ng-class="col" class="audio-wrapper" ng-repeat="item in rows">
+
+
+					<img id="img{{item.url.exhibitionID}}" class="audio-width audio-image-grayscale" ng-src="{{item.url.url}}" ng-cloak />
+
+					<button class="button ion-ios-play stable audio-play-position-size visible-button" id="{{item.url.exhibitionID}}" ng-model="global" ng-click="playMedia({{'item.url.urlAudio'}},{{item.url}});checkFavAudioguide({{item.url}});"></button>
+					<button class="button ion-ios-pause stable audio-play-position-size hidden-button" id="0{{item.url.exhibitionID}}" ng-click="pauseMedia(1,{{item.url}})"></button>
+					<h6 class="audio-title stable text-line-height-h">{{item.url.name}}</h6>
+					<p class="audio-p stable text-line-height-p">'{{item.url.description}}'</p>
+				</div>
+
+			</div>
+
+
+			<ion-item class="item-stable font-color-white bg-color-black" ng-click="toggleGroup(groups[1]);selectPieces();" ng-class="{active: isGroupShown(groups[1])}">
+
+				{{groups[1].name}}
+				<i class="icon float-2-right font-color-white " ng-class="isGroupShown(groups[1]) ? 'ion-chevron-up' : 'ion-chevron-down'"></i> &nbsp;
+			</ion-item>
+
+			<div class="row" ng-repeat="rows in groups[1].items" ng-show="isGroupShown(groups[1])">
+				<div ng-class="col" class="responsive-height piece-margin" ng-repeat="item in rows">
+					<a href="{{isAudio(groups[1]) ? '#/app/' : '#/app/exhibiciones/' + item.url.exhibitionID}}" ng-click="sendObject(item.url);changeModeShowFunc();">
+						<img class="piece-width" src="{{item.url.url}}" />
+
+						<div id="favContent">
+
+						</div>
+					</a>
+				</div>
+			</div>
+ 
+
+
+			<ion-item class="item-stable font-color-white bg-color-black" ng-click="toggleGroup(groups[2])" ng-class="{active: isGroupShown(groups[2])}">
+
+				{{groups[2].name}}
+				<i class="icon float-2-right font-color-white " ng-class="isGroupShown(groups[2]) ? 'ion-chevron-up' : 'ion-chevron-down'"></i> &nbsp;
+			</ion-item>
+
+			<div class="row" ng-repeat="rows in groups[2].items" ng-show="isGroupShown(groups[2])">
+				<div ng-class="col" class="responsive-height piece-margin" ng-repeat="item in rows">
+					<a href="{{isAudio(group) ? '#/app/' : '#/app/exhibiciones/' + item.url.exhibitionID}}" ng-click="sendObject(item.url);changeModeShowFunc();">
+						<img class="piece-width" src="{{item.url.url}}" />
+
+						<div id="favContent">
+
+						</div>
+					</a>
+				</div>
+			</div>
+
+		</ion-list>
+
+	</ion-content>
+	  
+
+</ion-view>
+
+
+
+<!--EN-->
+<ion-view lang="en">
+	<div class="bar bar-subheader bg-color-black">
+		<h1 class="title font-color-green">MY FAVORITES</h1>
+	</div>
+	<ion-content class="has-subheader bg-color-black">
+
+
+		<ion-list ng-init="changeModeShow = 'hide'">
+			<div ng-repeat="group in groups">
+				<ion-item class="item-stable font-color-white bg-color-black" ng-click="toggleGroup(group);{{group.function}};" ng-class="{active: isGroupShown(group)}">
+
+					{{group.name}}
+					<i class="icon float-2-right font-color-white " ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'"></i> &nbsp;
+				</ion-item>
+
+				<div class="row" ng-repeat="rows in group.items" ng-show="isGroupShown(group)">
+					<div ng-class="col" class="responsive-height piece-margin" ng-repeat="item in rows">
+						<a href="{{isAudio(group) ? '#/app/' : '#/app/exhibiciones/' + item.url.exhibitionID}}" ng-click="sendObject(item.url);changeModeShowFunc();">
+							<img class="piece-width" src="{{item.url.url}}" />
+							<!--<div ng-if="isAudioguide(group.name)" id="DOM">{{isAudioguide}}</div> -->
+						</a>
+					</div>
+				</div>
+			</div>
+		</ion-list>
+	</ion-content>
+
+</ion-view>
