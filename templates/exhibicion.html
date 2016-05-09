@@ -1,0 +1,220 @@
+<ion-view class="bg-color-black">
+
+	<ion-content class="bg-color-black" scroll="true">
+
+		<ion-slide-box on-slide-changed="slideHasChanged($index)" class="bg-color-black full-image">
+
+
+
+
+			<ion-slide ng-repeat="exhibition in exhib ">
+
+
+
+				<img class="full-images " image-lazy-src="{{exhibition.file.file.url}}" class="image-loader" image-lazy-loader="android">
+			</ion-slide>
+
+
+		</ion-slide-box>
+
+
+		<div class="list card off-margin">
+			<!--ES-->
+			<div class="borderless item item-body bg-color-black gradient-effect " lang="es">
+				<div class="row">
+					<div class="col-33  text-align-center ">
+					</div>
+					<div class="col-33">
+						<h1 class="font-color-green align-center font-size-big">{{specificExhi.name}}</h1></div>
+					<div class="col-33 text-align-center">
+						<a class="ion-ios-upload-outline icon-size-medium font-color-white" ng-click="exhibitionShare({{'specificExhi'}})"></a>
+					</div>
+				</div>
+ 
+				<p class="font-color-white">
+					{{specificExhi.description}}
+				</p>
+			</div>
+
+			<!--EN--> 
+			<div class="borderless item item-body bg-color-black gradient-effect" lang="en">
+				<div class="row">
+					<div class="col-33  text-align-center ">
+					</div>
+					<div class="col-33">
+						<h1 class="font-color-green align-center font-size-big">{{specificExhiEN.name}}</h1></div>
+					<div class="col-33 text-align-center"> 
+						<a class="ion-ios-upload-outline icon-size-medium font-color-white" ng-click="exhibitionShare({{'specificExhiEN'}})"></a>
+					</div>  
+				</div> 
+ 
+				<p class="font-color-white">
+					{{specificExhiEN.description}} 
+				</p> 
+			</div>
+			<!--ES-->
+			<li class="item item-toggle bg-color-black bg-slide-black font-color-white" lang="es">
+				Recorrido Guiado 
+				<label class="toggle toggle-balanced">
+					<input type="checkbox" ng-model="bt" id="bluetooth" value="off"    ng-checked="checked" ng-true-value="'YES'" ng-false-value="'NO'" ng-click="bluetoothEnable(this)">
+					<div class="track">
+						<div class="handle"></div>
+					</div>
+				</label> 
+			</li> 
+			<!--EN-->
+			<li class="item item-toggle bg-color-black bg-slide-black font-color-white" lang="en">
+				Guided Tour 
+				<label class="toggle toggle-balanced">
+					<input type="checkbox" ng-model="bt" id="bluetooth" value="off"  ng-checked="checked" ng-true-value="'YES'" ng-false-value="'NO'" ng-click="bluetoothEnable(this)">
+					<div class="track">
+						<div class="handle"></div>
+					</div>
+				</label>
+			</li>
+
+			<!--ES-->
+			<div class="row row-custom bg-color-black" lang="es">
+
+				<div ng-class="specialClassAudioGuide" class="col bg-color-black tab-custom ">
+					<a ng-click="changeTabs(1);loadJsonAudioguides();" class="font-color-green">AUDIOGUIAS</a>
+				</div>
+				<div ng-class="specialClassPiece" class="col bg-color-black tab-custom ">
+					<a ng-click="changeTabs(2);loadJsonPieces();" class="font-color-green">PIEZAS</a>
+				</div>
+			</div>
+			<!--EN--> 
+			<div class="row row-custom bg-color-black" lang="en">
+
+				<div ng-class="specialClassAudioGuide" class="col bg-color-black tab-custom ">
+					<a ng-click="changeTabs(1);loadJsonAudioguidesOL();" class="font-color-green">AUDIOGUIDES</a>
+				</div>
+				<div ng-class="specialClassPiece" class="col bg-color-black tab-custom ">
+					<a ng-click="changeTabs(2);loadJsonPiecesOL();" class="font-color-green">PIECES</a>
+				</div>
+			</div>
+			<div> 
+				<div ng-show="currTab === 1" class="bg-color-black"> 
+					<div class="row" ng-repeat="rows in audioChunkedData">
+						<div class="col-50 audio-margin" ng-repeat="audio in rows" ng-cloak>
+							<div class="audio-wrapper">
+								<img id ="img{{audio.id}}" class="audio-width audio-image-grayscale" ng-src="{{audio.file.file.url}}" ng-cloak />
+
+								<button class="button ion-ios-play stable audio-play-position-size visible-button" id="{{audio.id}}" ng-model="global" ng-click="playMedia({{'audio.audio.audio.url'}},{{audio}});checkFavAudioguide({{audio}});"></button>
+								<button class="button ion-ios-pause stable audio-play-position-size hidden-button" id="0{{audio.id}}" ng-click="pauseMedia(1,{{audio}})"></button>
+ 								<h6 class="audio-title stable text-line-height-h">{{audio.name}}</h6>
+								<p class="audio-p stable text-line-height-p">{{audio.description}}</p> 
+
+  
+
+							</div>
+
+
+						</div>
+					</div>
+
+
+
+				</div>
+				<div ng-show="currTab === 2" class="bg-color-black">
+					<!--ES-->
+					<div class="row font-color-white " lang="es">
+						<p class="font-size-small">DESCRIPCION DE PIEZAS DESTACADAS.</p>
+					</div>
+					<!--EN-->
+					<div class="row font-color-white " lang="en">
+						<p class="font-size-small">OUTSTANDING PIECES DESCRIPTION.</p>
+					</div>
+					<div ng-class="modeShow" class="hide">
+						<div class="row">
+							<ion-slide>
+								<img class="full-images " image-lazy-src="{{object.file.file.url||object.url}} " image-lazy-loader="android">
+							</ion-slide>
+						</div>
+						<div class="row">
+							<div class="col-33 text-align-center">
+								<a class="icon-size-medium font-color-white" ng-class="isFav" ng-click="insertPiece({{'object'}} , {{'specificExhi.id'}}, {{'object.id'}} )"></a>
+							</div>
+							<div class="col-33">
+								<h2 class="font-color-green ">{{object.name}}</h2>
+							</div>
+							<div class="col-33 text-align-center">
+								<a class="ion-ios-upload-outline icon-size-medium font-color-white" ng-click="pieceAudioShare({{'object'}})"></a>
+							</div>
+						</div>
+						<div class="centerBox" lang="es">
+							<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Descripcion:</span> {{object.description}}</p>
+							</div>
+							<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Sala:</span> {{object.room}}</p>
+							</div>
+							<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Vitrina:</span> {{object.showcase}}</p>
+							</div>
+						<!--	<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Modulo:</span> Base</p>
+							</div>
+							<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Materia:</span> Ceramica</p>
+							</div>-->
+						</div>
+						<div class="centerBox" lang="en">
+							<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Description:</span> {{object.description}}</p>
+							</div>
+							<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Room:</span> {{object.room}}</p>
+							</div>
+							<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Showcase:</span> {{object.showcase}}</p>
+							</div>
+							<!--<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Module:</span> Base</p>
+							</div> 
+							<div class="row">
+								<p class="font-color-white"><span class="font-color-yellow">Made of:</span> Ceramica</p> 
+							</div>-->
+						</div>
+					</div>
+					<!--ES-->
+					<div class="row" ng-repeat="rows in piecesChunkedData" lang="es">
+						<div ng-class="responsive-height" class="col-33 piece-margin" ng-repeat="piece in rows">
+							<a ng-click="changeMode({{piece}});changeMode2(1);checkFavPiece({{piece}});">
+								<img class="piece-width" id="{{piece}}" syle="position:relative;" ng-src="{{piece.file.file.url}}" />
+							</a>
+						</div>
+					</div>
+					<!--ES-->
+					
+					<div class="row" ng-repeat="rows in piecesChunkedDataOL" lang="en">
+	 					<div ng-class="responsive-height" class="col-33 piece-margin" ng-repeat="piece in rows">
+							<a ng-click="changeMode({{piece}});changeMode2(1);checkFavPiece({{piece}});">
+								<img class="piece-width" id="{{piece}}" syle="position:relative;" ng-src="{{piece.file.file.url}}" />
+							</a>
+						</div>
+					</div>
+				</div>
+ 
+ 
+
+			</div>
+
+		</div>
+
+	</ion-content>
+	<div ng-class="onlyShowOnAudio" class="bg-slide-black fixed-outside border-black hide">
+		<ion-footer-bar align-title="left" class="bg-slide-black bg-color-black ">
+			<div class="buttons">
+				<a ng-click="openModal()" class="button bg-color-black bg-slide-black ion-ios-arrow-up font-color-white button-size-for-modal"></a>
+			</div>
+			<p class="title-position title">{{currAudio.name}}</p>
+			<div class="buttons">
+				<button class="button bg-color-black ion-ios-play stable audio-play-position-mini-size hidden-button play-button-to-right" id="play-bar" ng-click="playMedia({{'currAudio.audio.audio.url'}},{{'currAudio'}})"></button>
+				<button class="button bg-color-black ion-ios-pause stable audio-play-position-mini-size visible-button" id="pause-bar" ng-click="pauseMedia(0,{{'currAudio'}})"></button>
+			</div>
+		</ion-footer-bar>
+
+	</div>
+
+</ion-view>

@@ -1,0 +1,153 @@
+ <ion-view class="bg-color-black" lang="es">
+
+    <ion-content class="bg-color-black" scroll="true">
+
+
+        <div class="list card off-margin">
+
+            <div class="borderless item bg-color-black gradient-effect ">
+                <div class="row">
+                    <div class="col-20  text-align-center ">
+                    </div>
+                    <div class="col-60">
+                        <h1 class="font-color-green align-center font-size-contact-title">MAPA DEL MUSEO</h1>
+                        <h2 class="font-color-green align-center font-size-medium">PISOS</h2>
+                    </div>
+
+                    <div class="col-20 text-align-center">
+                    </div>
+                </div>
+
+
+            </div>
+      
+            <div class="row row-custom bg-color-black side-padding">
+
+                <div ng-class="tab1" class="col bg-color-black tab-custom bold-numbers">
+                    <a ng-click="changeTabs(1)" class="font-color-white">
+                        1
+                    </a>
+                </div>
+                <div ng-class="tab2" class="col bg-color-black tab-custom bold-numbers">
+                    <a ng-click="changeTabs(2)" class="font-color-white">
+                        2
+                    </a>
+                </div>
+                <div ng-class="tab3" class="col bg-color-black tab-custom bold-numbers">
+                    <a ng-click="changeTabs(3)" class="font-color-white">
+                        3
+                    </a>
+                </div>
+                <div ng-class="tab4" class="col bg-color-black tab-custom bold-numbers"> 
+                    <a ng-click="changeTabs(4)" class="font-color-white">
+                        4
+                    </a>
+                </div>
+                <div ng-class="tab5" class="col bg-color-black tab-custom bold-numbers">
+                    <a ng-click="changeTabs(5)" class="font-color-white">
+                        5
+                    </a>
+                </div> 
+            </div>
+
+            <div>
+                <div ng-show="currTab === 1" class="bg-color-black side-margins">
+                    <img ng-src="../Plano%20N1.png" class="museum-map"/>
+                </div> 
+                <div ng-show="currTab === 2" class="bg-color-black side-margins">
+                    <img src="../Plano%20N2.png" class="museum-map"/>
+                </div>
+                <div ng-show="currTab === 3" class="bg-color-black side-margins">
+                    <img src="../Plano%20N3.png" class="museum-map"/>
+                </div>
+                <div ng-show="currTab === 4" class="bg-color-black side-margins">
+                    <img src="../Plano%20N4.png" class="museum-map"/>
+                </div>
+                <div ng-show="currTab === 5" class="bg-color-black side-margins">
+                    <img src="../Plano%20N5.png" class="museum-map"/>
+                </div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>
+
+ <ion-view class="bg-color-black" lang="en">
+
+    <ion-content class="bg-color-black" scroll="true">
+
+
+        <div class="list card off-margin">
+
+            <div class="borderless item bg-color-black gradient-effect ">
+                <div class="row">
+                    <div class="col-20  text-align-center ">
+                    </div>
+                    <div class="col-60">
+                        <h1 class="font-color-green align-center font-size-contact-title">MUSEUM MAP</h1>
+                        <h2 class="font-color-green align-center font-size-medium">FLOORS</h2>
+                    </div>
+
+                    <div class="col-20 text-align-center">
+                    </div>
+                </div> 
+
+
+            </div>
+      
+            <div class="row row-custom bg-color-black side-padding">
+
+                <div ng-class="tab1" class="col bg-color-black tab-custom bold-numbers">
+                    <a ng-click="changeTabs(1)" class="font-color-white">
+                        1
+                    </a>
+                </div>
+                <div ng-class="tab2" class="col bg-color-black tab-custom bold-numbers">
+                    <a ng-click="changeTabs(2)" class="font-color-white">
+                        2
+                    </a>
+                </div>
+                <div ng-class="tab3" class="col bg-color-black tab-custom bold-numbers">
+                    <a ng-click="changeTabs(3)" class="font-color-white">
+                        3
+                    </a>
+                </div>
+                <div ng-class="tab4" class="col bg-color-black tab-custom bold-numbers"> 
+                    <a ng-click="changeTabs(4)" class="font-color-white">
+                        4
+                    </a>
+                </div>
+                <div ng-class="tab5" class="col bg-color-black tab-custom bold-numbers">
+                    <a ng-click="changeTabs(5)" class="font-color-white">
+                        5
+                    </a>
+                </div> 
+            </div>
+
+            <div>
+                <div ng-show="currTab === 1" class="bg-color-black side-margins">
+                    <img ng-src="../Plano%20N1.png" class="museum-map"/>
+                </div> 
+                <div ng-show="currTab === 2" class="bg-color-black side-margins">
+                    <img src="../Plano%20N2.png" class="museum-map"/>
+                </div>
+                <div ng-show="currTab === 3" class="bg-color-black side-margins">
+                    <img src="../Plano%20N3.png" class="museum-map"/>
+                </div>
+                <div ng-show="currTab === 4" class="bg-color-black side-margins">
+                    <img src="../Plano%20N4.png" class="museum-map"/>
+                </div>
+                <div ng-show="currTab === 5" class="bg-color-black side-margins">
+                    <img src="../Plano%20N5.png" class="museum-map"/>
+                </div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

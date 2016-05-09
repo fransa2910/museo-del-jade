@@ -1,0 +1,49 @@
+<!--ES-->
+
+<ion-view class="bg-color-black ">
+
+    <!--ES-->
+    <div class="bar bar-subheader bg-color-black subheader-height" lang="es">
+        <h1 class="title font-color-green subheader-line-height">EVENTOS</h1>
+    </div>
+    <!--EN-->
+    <div class="bar bar-subheader bg-color-black subheader-height" lang="en">
+        <h1 class="title font-color-green subheader-line-height">EVENTS</h1>
+    </div>
+
+    <ion-content class="gradient-effect has-subheader">
+		<ion-refresher pulling-text="Arrastre para refrescar..." on-refresh="doRefresh()">
+		</ion-refresher>  
+        <div class="list">
+
+
+
+
+            <div class="row row-size-events bg-slide-black full-space-events events-row-border" ng-repeat="event in allEvents">
+                <!--,  'background-size':'100% auto'-->
+                <img ng-src="{{event.file.file.url}}" class="event-image-position"/>
+                <p class="font-color-white font-size-medium date-event icon-bottom">{{event.date}}</p>
+                <div class="position-events">
+                    <h1 class="font-color-white font-size-medium">{{event.name}}</h1>
+
+
+                    <p class="font-color-gray font-size-small">{{event.description}}</p>
+
+                </div>
+                
+                <div lang="es">
+                    <i class="ion-ios-calendar-outline icon-bottom font-color-white"></i>
+                    <a ng-click="createEvent({{'event'}})"><p class="font-color-white font-size-small save-event">Guardar en calendario</p></a>
+                </div>
+				<div lang="en">
+                    <i class="ion-ios-calendar-outline icon-bottom font-color-white"></i>
+                    <a ng-click="createEvent({{'event'}})"><p class="font-color-white font-size-small save-event">Save to calendar</p></a>
+                </div>  
+            </div>
+
+
+        </div>
+    </ion-content>
+</ion-view>
+
+<!--EN-->  

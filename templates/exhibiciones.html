@@ -1,0 +1,62 @@
+<!--ES-->
+
+<ion-view class="bg-color-black ">
+
+	<!--ES-->
+	<div class="bar bar-subheader bg-color-black subheader-height" lang="es">
+		<h1 class="title font-color-green subheader-line-height">EXHIBICIONES<br>Permanentes</h1>
+	</div>
+	<!--EN-->
+	<div class="bar bar-subheader bg-color-black subheader-height" lang="en">
+		<h1 class="title font-color-green subheader-line-height">EXHIBITIONS<br>Permanents</h1>
+	</div>
+
+	<ion-content class="background-exhibitions has-subheader">
+		<ion-refresher pulling-text="Arrastre para refrescar..." on-refresh="doRefresh()">
+		</ion-refresher>
+
+		<div class="list">
+
+
+			<!--ES-->
+			<div class="row row-size bg-slide-black full-images-exhi" ng-repeat="dir in exhiBg" lang="es" >
+				<img ng-src="{{dir.file.file.url}}" class="exhibition-position" state-loading-indicator>
+				<div class="position-exhi">
+					<h1 class="font-color-white ">{{dir.name}}</h1>
+					<p class="font-color-white">{{dir.miniDescription}}</p>
+
+				</div>
+
+				<a lang="es" class="button jade-button button-position" value="{{dir.url}}" href="#/app/exhibiciones/{{dir.id}}">
+          VISITAR
+        </a>
+			<!--		<a lang="en" class="button jade-button button-position" value="{{dir.url}}" href="#/app/exhibiciones/{{dir.id}}">
+          VISIT  
+        </a>-->
+
+			</div>  
+
+ 
+			</div> 
+			
+			<div class="row row-size bg-slide-black full-images-exhi" ng-repeat="dirOL in exhiBgOL" lang="en">
+				<img ng-src="{{dirOL.file.file.url}}" class="exhibition-position" state-loading-indicator>
+				<div class="position-exhi"> 
+					<h1 class="font-color-white ">{{dirOL.name}}</h1>
+					<p class="font-color-white">{{dirOL.miniDescription}}</p>
+
+				</div>
+   
+			
+				<a class="button jade-button button-position" value="{{dirOL.url}}" href="#/app/exhibiciones/{{dirOL.exhibition_id}}"> 
+          VISIT  
+        </a> 
+ 
+			</div>
+		</div>
+
+
+	</ion-content>
+</ion-view>
+
+<!--EN-->

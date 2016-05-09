@@ -1,0 +1,97 @@
+<ion-view class="bg-color-black" lang="es">
+	<div class="bar bar-subheader bg-color-black">
+		<h1 class="title font-color-green">Audioguías</h1>
+	</div>
+	<ion-content class="has-subheader bg-color-black">
+
+
+		<ion-list>
+			<div ng-repeat="group in exhiBg">
+				<ion-item class="item-stable font-color-white bg-color-black" ng-click="toggleGroup(group);getAudiobyID(group.id);" ng-class="{active: isGroupShown(group)}">
+
+					{{group.name}}
+					<i class="icon float-2-right font-color-white " ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'"></i> &nbsp;
+				</ion-item> 
+
+				<div class="row" ng-repeat="audioguides in allAudiosChunk" ng-show="isGroupShown(group)">
+					<div class="col-50 audio-margin" ng-repeat="audio in audioguides">
+						<div class="audio-wrapper">
+							<img class="audio-width audio-image-grayscale" ng-src="{{audio.file.file.url}}" ng-cloak />
+
+							<button class="button ion-ios-play stable audio-play-position-size visible-button" id="{{audio.id}}"  ng-click="playMedia({{'audio.audio.audio.url'}},{{audio}}); "></button>
+							<button class="button ion-ios-pause stable audio-play-position-size hidden-button" id="0{{audio.id}}" ng-click="pauseMedia(1,{{audio}})"></button>
+
+  
+							<h6 class="audio-title stable text-line-height-h">{{audio.name}}</h6>
+							<p class="audio-p stable text-line-height-p">{{audio.description}}</p>
+						</div>
+  
+					</div>
+				</div>  
+			</div>
+		</ion-list>
+	</ion-content>
+	<div ng-class="onlyShowOnAudio" class="bg-slide-black fixed-outside border-black hide">
+		<ion-footer-bar align-title="left" class="bg-slide-black bg-color-black ">
+			<div class="buttons">
+				<a ng-click="openModal()" class="button bg-color-black bg-slide-black ion-ios-arrow-up font-color-white button-size-for-modal"></a>
+			</div>
+			<p class="title-position title">{{currAudio.name}}</p>
+			<div class="buttons">
+				<button class="button bg-color-black ion-ios-play stable audio-play-position-mini-size hidden-button play-button-to-right" id="play-bar" ng-click="playMedia({{'currAudio.audio.audio.url'}},{{'currAudio'}})"></button>
+				<button class="button bg-color-black ion-ios-pause stable audio-play-position-mini-size visible-button" id="pause-bar" ng-click="pauseMedia(0,{{'currAudio'}})"></button>
+			</div>
+		</ion-footer-bar>
+
+	</div>
+
+</ion-view>
+
+<ion-view class="bg-color-black" lang="en">
+	<div class="bar bar-subheader bg-color-black">
+		<h1 class="title font-color-green">Audioguides</h1>
+	</div>
+	<ion-content class="has-subheader bg-color-black">
+
+
+		<ion-list>
+			<div ng-repeat="group in exhiBgOL"> 
+				<ion-item class="item-stable font-color-white bg-color-black" ng-click="toggleGroup(group);getAudiobyID(group.id);" ng-class="{active: isGroupShown(group)}">
+
+					{{group.name}}
+					<i class="icon float-2-right font-color-white " ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'"></i> &nbsp;
+				</ion-item> 
+
+				<div class="row" ng-repeat="audioguides in allAudiosChunk" ng-show="isGroupShown(group)">
+					<div class="col-50 audio-margin" ng-repeat="audio in audioguides">
+						<div class="audio-wrapper">
+							<img class="audio-width audio-image-grayscale" ng-src="{{audio.file.file.url}}" ng-cloak />
+
+							<button class="button ion-ios-play stable audio-play-position-size visible-button" id="{{audio.id}}"  ng-click="playMedia({{'audio.audio.audio.url'}},{{audio}}); "></button>
+							<button class="button ion-ios-pause stable audio-play-position-size hidden-button" id="0{{audio.id}}" ng-click="pauseMedia(1,{{audio}})"></button>
+
+  
+							<h6 class="audio-title stable text-line-height-h">{{audio.name}}</h6>
+							<p class="audio-p stable text-line-height-p">{{audio.description}}</p>
+						</div>
+  
+					</div>
+				</div>  
+			</div>
+		</ion-list>
+	</ion-content>
+	<div ng-class="onlyShowOnAudio" class="bg-slide-black fixed-outside border-black hide">
+		<ion-footer-bar align-title="left" class="bg-slide-black bg-color-black ">
+			<div class="buttons">
+				<a ng-click="openModal()" class="button bg-color-black bg-slide-black ion-ios-arrow-up font-color-white button-size-for-modal"></a>
+			</div>
+			<p class="title-position title">{{currAudio.name}}</p>
+			<div class="buttons">
+				<button class="button bg-color-black ion-ios-play stable audio-play-position-mini-size hidden-button play-button-to-right" id="play-bar" ng-click="playMedia({{'currAudio.audio.audio.url'}},{{'currAudio'}})"></button>
+				<button class="button bg-color-black ion-ios-pause stable audio-play-position-mini-size visible-button" id="pause-bar" ng-click="pauseMedia(0,{{'currAudio'}})"></button>
+			</div>
+		</ion-footer-bar>
+
+	</div>
+
+</ion-view>
